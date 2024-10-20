@@ -41,10 +41,10 @@ def found_best_image_manhattan(target_color, image_colors):
     
     return best_image
 
-def create_mosaic(dataset, base_image_path, output_image, img_size):
+def create_mosaic(dataset, base_image_path, output_image, img_size, fator):
     base_image = Image.open(base_image_path)
     base_width, base_height = base_image.size
-    base_image = base_image.resize((base_width*2, base_height*2), Image.LANCZOS)
+    base_image = base_image.resize((base_width*fator, base_height*fator), Image.LANCZOS)
     num_canais = len(base_image.getbands())
     base_width, base_height = base_image.size
     mosaic_shape = (base_height // img_size[0], base_width // img_size[1])
@@ -131,9 +131,10 @@ def create_mosaic(dataset, base_image_path, output_image, img_size):
 """
     
 # Parâmetros do código
-base_image = './images_base/wood.png'
+base_image = './images_base/fluminense.png'
+fator = 4
 dataset = './datasets/pokemon'
-mosaic_output = 'outputs/mosaico-wood-euclidiano.png'
-mosaic_shape = (25,25)
+mosaic_output = 'outputs/mosaico-flu-euclidiano.png'
+mosaic_shape = (20,20)
 
-create_mosaic(dataset, base_image, mosaic_output, mosaic_shape)
+create_mosaic(dataset, base_image, mosaic_output, mosaic_shape,fator)
