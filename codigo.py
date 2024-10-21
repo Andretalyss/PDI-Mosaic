@@ -131,10 +131,10 @@ def create_mosaic(dataset, base_image_path, output_image, img_size, fator):
 """
     
 # Parâmetros do código
-base_image = './images_base/fluminense.png'
-fator = 4
+base_image = './images_base/taj_mahal.jpeg'
+fator = 8
 dataset = './datasets/pokemon'
-mosaic_output = 'outputs/mosaico-flu-euclidiano.png'
-mosaic_shape = (20,20)
+mosaic_output = 'outputs/mosaico-taj-euclidiano.png'
+mosaic_shape = (16,16)
 
 create_mosaic(dataset, base_image, mosaic_output, mosaic_shape,fator)
